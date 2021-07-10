@@ -1,0 +1,10 @@
+version: "3"
+services:
+  kittymock1:
+    image: ntopus/kitty-mock:0.4.5
+    ports:
+      - "6999:6999"
+      - "7000-7020:7000-7020"
+    environment:
+      SERVER_PORT: 6999
+      MOCKER_PORTS_RANGE: 7000-7020
