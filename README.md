@@ -11,7 +11,7 @@ A Python library for simulate an API with http and websocket request. In this `0
 
 The latest stable version [is available on PyPI](https://pypi.org/project/kittymocklib_py/). Either add `kittymocklib_py` to your `requirements.txt` file or install with pip:
 
-    pip install kittymocklib_py
+    pip install kittymocklib-py
 
 ## Description
 
