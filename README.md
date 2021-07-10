@@ -2,7 +2,10 @@
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/kittymocklib-py.svg)](https://pypi.python.org/pypi/kittymocklib-py/)
 [![GitHub tag](https://img.shields.io/github/tag/Suspir0n/kitty-Mock-Lib-Python.svg)](https://github.com/Suspir0n/kitty-Mock-Lib-Python/tags)
 
-A Python library for simulate an API with http and websocket request. In this `0.1.0` version of kitty-Mock-Lib-Python, allows you to simulate an API, being able to create routes in your own way, getting the history, details of it and other things you can do.
+
+# kitty Mock Lib Python
+
+A Python library for simulate an API with http and websocket request. In this `0.1.0.1` version of kitty-Mock-Lib-Python, allows you to simulate an API, being able to create routes in your own way, getting the history, details of it and other things you can do.
 
 ## Installation
 

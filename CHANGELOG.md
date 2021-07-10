@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0.1] - 2021-07-10
+### Added
+- Added some functions
+- Updating README
+
 ## [0.1.0] - 2021-07-10
 ### Added
 - Added loggings
@@ -16,4 +21,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 [Unreleased]: https://github.com/Suspir0n/kitty-Mock-Lib-Python/compare/v.1.0...HEAD
+[0.1.0.1]: https://github.com/Suspir0n/kitty-Mock-Lib-Python/releases/tag/v0.1.0.1
 [0.1.0]: https://github.com/Suspir0n/kitty-Mock-Lib-Python/releases/tag/v0.1.0
