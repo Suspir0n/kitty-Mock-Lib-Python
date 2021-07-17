@@ -1,3 +1,4 @@
+[![Python Package](https://github.com/Suspir0n/kitty-Mock-Lib-Python/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/Suspir0n/kitty-Mock-Lib-Python/actions/workflows/github-actions-demo.yml)
 [![PyPI version fury.io](https://badge.fury.io/py/kittymocklib-py.svg)](https://pypi.python.org/pypi/kittymocklib-py/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/kittymocklib-py.svg)](https://pypi.python.org/pypi/kittymocklib-py/)
 [![GitHub tag](https://img.shields.io/github/tag/Suspir0n/kitty-Mock-Lib-Python.svg)](https://github.com/Suspir0n/kitty-Mock-Lib-Python/tags)
