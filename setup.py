@@ -8,7 +8,7 @@ with codecs.open('./README.md', encoding='utf-8') as readme_md:
 setup(
     name='kittymocklib_py',
     packages=find_packages(include=['kittymocklib_py']),
-    version='0.1.0.3',
+    version='0.1.0.4',
     description='A library in python for simulated API server',
     long_description=long_description,
     long_description_content_type='text/markdown',
