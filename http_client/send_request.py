@@ -1,10 +1,19 @@
-import requests
+"""
+It receiving some data and make a request.
+"""
 import logging
+import requests
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG, datefmt='%d-%b-%y %H:%M:%S')
-logger = logging.getLogger(__name__)
 
 def send_request(method, url, body='', header=''):
+    """
+    It receiving some data and make a request.
+    :param method: string
+    :param url: string
+    :param body: string
+    :param header: json
+    :return: request
+    """
     logging.info('\033[1;34mSending a request\033[m')
     try:
         if method == 'POST':
@@ -22,5 +31,5 @@ def send_request(method, url, body='', header=''):
         logging.info('\033[1;34mSuccessfully requesting\033[m')
         return request
     except Exception as error:
-        logging.error(f'\033[1;31mError requesting a request, Error: {error}\033[m')
-        raise Exception(f'Error during request request!\n Error: {error}')
+        logging.error('\033[1;31mError requesting a request, Error: %(error)s\033[m')
+        raise Exception(f'Error during request request!\n Error: {error}') from error
