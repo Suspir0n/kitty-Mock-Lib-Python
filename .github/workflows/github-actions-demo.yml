@@ -3,6 +3,17 @@ name: Python package
 on: [push]
 
 jobs:
+  lint:
+    - uses: ricardochaves/python-lint@test
+      with:
+        python-root-list: 'python_alelo tests'
+        use-pylint: true
+        use-pycodestyle: true
+        use-flake8: true
+        use-black: true
+        use-mypy: true
+        use-isort: true
+
   test:
     runs-on: ubuntu-latest
     strategy:
