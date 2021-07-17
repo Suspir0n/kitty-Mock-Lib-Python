@@ -24,4 +24,4 @@ def get_body(receive_response):
         return response_dictionary
     except Exception as error:
         logging.error('\033[1;31mFailed to read body, Error: %(error)s\033[m')
-        raise Exception(f'failed to read body\n Error: {error}')
+        raise Exception(f'failed to read body\n Error: {error}') from error
