@@ -3,6 +3,26 @@ name: Python package
 on: [push]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ricardochaves/python-lint@v1.4.0
+      with:
+        python-root-list: 'kittymocklib_py tests'
+        use-pylint: true
+        use-pycodestyle: true
+        use-flake8: true
+        use-black: true
+        use-mypy: true
+        use-isort: true
+        extra-pylint-options: ""
+        extra-pycodestyle-options: ""
+        extra-flake8-options: ""
+        extra-black-options: ""
+        extra-mypy-options: ""
+        extra-isort-options: ""
+
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -30,9 +50,10 @@ jobs:
       - name: Test with unittest
         run: |
           python -m unittest discover tests -v
-      
+
   deploy:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
     needs: test
     strategy:
       matrix:
@@ -43,7 +64,6 @@ jobs:
         run: |
           python setup.py sdist
       - name: Publish a Python distribution to PyPI
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
