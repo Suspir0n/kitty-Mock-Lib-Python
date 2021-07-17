@@ -32,10 +32,11 @@ jobs:
       - name: Test with pytest
         run: |
           python -m unittest discover tests -v
-      - name: Publish a Python distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+      - name: Generate dist
         run: |
           python setup.py sdist
+      - name: Publish a Python distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
