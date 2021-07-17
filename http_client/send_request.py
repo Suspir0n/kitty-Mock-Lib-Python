@@ -1,10 +1,26 @@
+"""
+It receiving some data and make a request.
+"""
 import requests
 import logging
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG, datefmt='%d-%b-%y %H:%M:%S')
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.DEBUG,
+    datefmt='%d-%b-%y %H:%M:%S'
+)
 logger = logging.getLogger(__name__)
 
+
 def send_request(method, url, body='', header=''):
+    """
+    It receiving some data and make a request.
+    :param method: string
+    :param url: string
+    :param body: string
+    :param header: json
+    :return: request
+    """
     logging.info('\033[1;34mSending a request\033[m')
     try:
         if method == 'POST':
