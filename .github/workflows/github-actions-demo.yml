@@ -34,6 +34,8 @@ jobs:
           python -m unittest discover tests -v
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        run: |
+          python setup.py sdist
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
