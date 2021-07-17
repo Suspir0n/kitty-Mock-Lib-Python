@@ -30,7 +30,7 @@ Nossos scripts e exemplos são direcionados para qualquer ambiente, seja ele LIN
 ## Running Tests
 
 ``` bash
-$ python -m unittest discove tests -v
+$ python -m unittest discover tests -v
 ```
 
 **Happy coding**!
