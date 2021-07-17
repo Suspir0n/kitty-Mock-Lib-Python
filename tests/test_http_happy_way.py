@@ -1,10 +1,18 @@
-from kittymocklib_py.mocker import Mocker
+"""
+Testing the happy way of kittymocklib-py
+"""
 import unittest
+from kittymocklib_py.mocker import Mocker
+
 
 class HappyWay(unittest.TestCase):
+    """
+    Testing the happy way of kittymocklib-py
+    """
     def test_should_create_mock_server_using_valid_host(self):
         """
-        Should Create a mock server using valid host and return a mocker server and a boolean with true value
+        Should Create a mock server using valid host and
+        return a mocker server and a boolean with true value
         """
         mocker = Mocker("http://localhost", 6999)
         self.assertIsNotNone(mocker)
@@ -56,7 +64,7 @@ class HappyWay(unittest.TestCase):
         self.assertEqual(route_response.status_code, 204)
         response = mocker.delete()
         self.assertEqual(response.status_code, 204)
-    
+
     def test_request_a_mocker_route_get_history_with_valid_port_and_filter(self):
         """
         Should get a history using a valid port and filter(path/method)
@@ -83,20 +91,6 @@ class HappyWay(unittest.TestCase):
         self.assertEqual(route_response.status_code, 204)
         response = mocker.delete()
         self.assertEqual(response.status_code, 204)
-
-    """def test_request_a_mocker_route_update(self):
-        
-        Should update a route passed the status response and body response
-        
-        mocker = Mocker("http://localhost", 6999)
-        self.assertIsNotNone(mocker)
-        route = mocker.create_http_route("/test6", "GET", 200, "test6 request mock route")
-        self.assertIsNotNone(route)
-        route_response = route.update(204, "test6 update route")
-        print(f'misera: {route_response}')
-        self.assertEqual(route_response.status_code, 204)
-        response = mocker.delete()
-        self.assertEqual(response.status_code, 204)"""
 
     def test_request_a_mocker_route_update(self):
         """
