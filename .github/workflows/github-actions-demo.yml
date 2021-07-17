@@ -4,8 +4,6 @@ on: [push]
 
 jobs:
   lint:
-    lint:
-
     runs-on: ubuntu-latest
 
     steps:
