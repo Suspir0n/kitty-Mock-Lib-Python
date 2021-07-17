@@ -1,8 +1,8 @@
 """
 It receiving some data and make a request.
 """
-import requests
 import logging
+import requests
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -38,5 +38,5 @@ def send_request(method, url, body='', header=''):
         logging.info('\033[1;34mSuccessfully requesting\033[m')
         return request
     except Exception as error:
-        logging.error(f'\033[1;31mError requesting a request, Error: {error}\033[m')
-        raise Exception(f'Error during request request!\n Error: {error}')
+        logging.error('\033[1;31mError requesting a request, Error: %(error)s\033[m')
+        raise Exception(f'Error during request request!\n Error: {error}') from error
