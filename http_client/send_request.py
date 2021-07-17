@@ -4,13 +4,6 @@ It receiving some data and make a request.
 import logging
 import requests
 
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.DEBUG,
-    datefmt='%d-%b-%y %H:%M:%S'
-)
-logger = logging.getLogger(__name__)
-
 
 def send_request(method, url, body='', header=''):
     """
