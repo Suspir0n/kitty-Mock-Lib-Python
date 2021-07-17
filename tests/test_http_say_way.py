@@ -22,7 +22,12 @@ class SayWay(unittest.TestCase):
         """
         mocker = Mocker("http://localhost", 6999)
         self.assertIsNotNone(mocker)
-        route = mocker.create_http_route("INVALID", "GET", 200, "test1 create http mock route")
+        route = mocker.create_http_route(
+            "INVALID",
+            "GET",
+            200,
+            "test1 create http mock route"
+        )
         self.assertIsNotNone(route)
         self.assertEqual(mocker.create_http_route_response.status_code, 400)
         self.assertEqual(
@@ -38,7 +43,12 @@ class SayWay(unittest.TestCase):
         """
         mocker = Mocker("http://localhost", 6999)
         self.assertIsNotNone(mocker)
-        route = mocker.create_http_route("/test2", "INVALID", 200, "test2 create http mock route")
+        route = mocker.create_http_route(
+            "/test2",
+            "INVALID",
+            200,
+            "test2 create http mock route"
+        )
         self.assertIsNotNone(route)
         self.assertEqual(mocker.create_http_route_response.status_code, 400)
         self.assertEqual(
@@ -54,7 +64,12 @@ class SayWay(unittest.TestCase):
         """
         mocker = Mocker("http://localhost", 6999)
         self.assertIsNotNone(mocker)
-        route = mocker.create_http_route("/test2", "GET", 9999, "test2 create http mock route")
+        route = mocker.create_http_route(
+            "/test2",
+            "GET",
+            9999,
+            "test2 create http mock route"
+        )
         self.assertIsNotNone(route)
         self.assertEqual(mocker.create_http_route_response.status_code, 400)
         self.assertEqual(

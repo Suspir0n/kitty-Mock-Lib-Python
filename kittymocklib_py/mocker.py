@@ -25,7 +25,8 @@ class Mocker:
         :param port: int
         """
         try:
-            logging.info('\033[1;34mReceiving a request for create mocker\033[m')
+            logging.info('\033[1;34mReceiving a request '
+                         'for create mocker\033[m')
             self.host = host
             self.port = port
             self.create_http_route_response = ''
@@ -39,10 +40,14 @@ class Mocker:
             self.mocker_port = response_dictionary["data"]["port"]
             return None
         except Exception as error:
-            logging.error('\033[1;31mFailed to create mocker, Error: %(error)s\033[m')
-            raise Exception(f'Failed to create mocker\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to create mocker,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to create mocker\n'
+                            f'Error: {error}') from error
 
-    def create_http_route(self, path: str, method: str, code: int, body: str):
+    def create_http_route(self,
+                          path: str, method: str,
+                          code: int, body: str):
         """
         It create a http route.
         :param path: string
@@ -52,7 +57,8 @@ class Mocker:
         :return: functions of this route
         """
         try:
-            logging.info('\033[1;34mReceiving a request for create http route\033[m')
+            logging.info('\033[1;34mReceiving a request '
+                         'for create http route\033[m')
             http_route = {
                 "filters": {
                     "path": path,
@@ -65,7 +71,8 @@ class Mocker:
             }
             self.create_http_route_response = send_request(
                 method='POST',
-                url=f'{self.host}:{self.mocker_port}/=^.^=/route', body=http_route
+                url=f'{self.host}:{self.mocker_port}'
+                    f'/=^.^=/route', body=http_route
             )
             logging.info('\033[1;34mSuccessfully created\033[m')
             return HttpRoute(
@@ -75,8 +82,10 @@ class Mocker:
                 path=path
             )
         except Exception as error:
-            logging.error('\033[1;31mFailed to create http route, Error: %(error)s\033[m')
-            raise Exception(f'Failed to create http route\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to create http route,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to create http route\n'
+                            f'Error: {error}') from error
 
     def delete(self):
         """
@@ -84,10 +93,16 @@ class Mocker:
         :return: response http
         """
         try:
-            logging.info('\033[1;34mReceiving a request for delete mocker\033[m')
-            response = send_request(method='DELETE', url=f'{self.host}:{self.mocker_port}')
+            logging.info('\033[1;34mReceiving a request '
+                         'for delete mocker\033[m')
+            response = send_request(
+                method='DELETE',
+                url=f'{self.host}:{self.mocker_port}'
+            )
             logging.info('\033[1;34mSuccessfully deleted\033[m')
             return response
         except Exception as error:
-            logging.error('\033[1;31mFailed to delete mocker, Error: %(error)s\033[m')
-            raise Exception(f'Failed to delete mocker\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to delete mocker,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to delete mocker\n'
+                            f'Error: {error}') from error

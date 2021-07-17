@@ -32,14 +32,18 @@ class HttpRoute:
         try:
             response = send_request(
                 method='GET',
-                url=f'{self.host}:{self.port}/=^.^=/history?path={self.path}&method={self.method}'
+                url=f'{self.host}:{self.port}'
+                    f'/=^.^=/history?path={self.path}'
+                    f'&method={self.method}'
             )
             response_dictionary = get_body(response)
             logging.info('\033[1;34mSuccessfully obtained\033[m')
             return response_dictionary
         except Exception as error:
-            logging.error('\033[1;31mFailed to get history, Error: %(error)s\033[m')
-            raise Exception(f'Failed to get history\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to get history,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to get history\n'
+                            f'Error: {error}') from error
 
     def clear_history(self):
         """
@@ -50,13 +54,17 @@ class HttpRoute:
         try:
             response = send_request(
                 method='DELETE',
-                url=f'{self.host}:{self.port}/=^.^=/history?path={self.path}&method={self.method}'
+                url=f'{self.host}:{self.port}'
+                    f'/=^.^=/history?path={self.path}'
+                    f'&method={self.method}'
             )
             logging.info('\033[1;34mSuccessfully clean\033[m')
             return response
         except Exception as error:
-            logging.error('\033[1;31mFailed to clear history, Error: %(error)s\033[m')
-            raise Exception(f'Failed to clear history\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to clear history,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to clear history\n'
+                            f'Error: {error}') from error
 
     def delete(self):
         """
@@ -67,13 +75,17 @@ class HttpRoute:
         try:
             response = send_request(
                 method='DELETE',
-                url=f'{self.host}:{self.port}/=^.^=/route?path={self.path}&method={self.method}'
+                url=f'{self.host}:{self.port}'
+                    f'/=^.^=/route?path={self.path}'
+                    f'&method={self.method}'
             )
             logging.info('\033[1;34mSuccessfully deleted\033[m')
             return response
         except Exception as error:
-            logging.error('\033[1;31mFailed to delete http route, Error: %(error)s\033[m')
-            raise Exception(f'Failed to delete http route\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to delete http route,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to delete http route\n'
+                            f'Error: {error}') from error
 
     def update(self, response_status, response_body):
         """
@@ -92,15 +104,19 @@ class HttpRoute:
         try:
             response = send_request(
                 method='PUT',
-                url=f'{self.host}:{self.port}/=^.^=/route?path={self.path}&method={self.method}',
+                url=f'{self.host}:{self.port}'
+                    f'/=^.^=/route?path={self.path}'
+                    f'&method={self.method}',
                 body=http_route
             )
             response_dictionary = get_body(response)
             logging.info('\033[1;34mSuccessfully updated\033[m')
             return response_dictionary
         except Exception as error:
-            logging.error('\033[1;31mFailed to update route, Error: %(error)s\033[m')
-            raise Exception(f'Failed to update route\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to update route,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to update route\n'
+                            f'Error: {error}') from error
 
     def details(self):
         """
@@ -111,14 +127,18 @@ class HttpRoute:
         try:
             response = send_request(
                 method='GET',
-                url=f'{self.host}:{self.port}/=^.^=/route?path={self.path}&method={self.method}'
+                url=f'{self.host}:{self.port}'
+                    f'/=^.^=/route?path={self.path}'
+                    f'&method={self.method}'
             )
             response_dictionary = get_body(response)
             logging.info('\033[1;34mSuccessfully obtained\033[m')
             return response_dictionary
         except Exception as error:
-            logging.error('\033[1;31mFailed to get details http route, Error: %(error)s\033[m')
-            raise Exception(f'Failed to get details http route\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to get details http route,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to get details http route\n'
+                            f'Error: {error}') from error
 
     def request(self, body='', hearders=''):
         """
@@ -127,7 +147,8 @@ class HttpRoute:
         :param hearders: json
         :return: response http
         """
-        logging.info('\033[1;34mReceiving a request of method POST in route\033[m')
+        logging.info('\033[1;34mReceiving a request '
+                     'of method POST in route\033[m')
         try:
             response = send_request(
                 method=self.method,
@@ -138,5 +159,7 @@ class HttpRoute:
             logging.info('\033[1;34mSuccessfully requested\033[m')
             return response
         except Exception as error:
-            logging.error('\033[1;31mFailed to request http route, Error: %(error)s\033[m')
-            raise Exception(f'Failed to request http route\n Error: {error}') from error
+            logging.error('\033[1;31mFailed to request http route,'
+                          'Error: %(error)s\033[m')
+            raise Exception(f'Failed to request http route\n'
+                            f'Error: {error}') from error
