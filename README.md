@@ -8,7 +8,7 @@
 
 # kitty Mock Lib Python
 
-A Python library for simulate an API with http and websocket request. In this `0.1.0.4` version of kitty-Mock-Lib-Python, allows you to simulate an API, being able to create routes in your own way, getting the history, details of it and other things you can do.
+A Python library for simulate an API with http and websocket request. In this `0.1.0.5` version of kitty-Mock-Lib-Python, allows you to simulate an API, being able to create routes in your own way, getting the history, details of it and other things you can do.
 
 ## Installation
 
